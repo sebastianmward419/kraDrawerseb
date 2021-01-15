@@ -11,7 +11,7 @@ process.stdin.on ('keypress', (ch, key) =>
 
     if (['left', 'right', 'up', 'down'].includes (key.name))
     {
-       socket.emit ('eventName', key.name);
+       socket.emit ('eventName', `${key.name}\0`);
     }
 
     if (key && key.ctrl && key.name == 'c') 
